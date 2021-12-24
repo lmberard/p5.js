@@ -1,31 +1,34 @@
 function setup() {
   
   createCanvas(windowWidth, windowHeight); // I have to setup my canvas ()
-  background(50,50,50); // background for the canvas: i can write only once 50 
+  background(1); // background for the canvas: i can write only once 50 
   noCursor(); // for not showing the mouse
   frameRate(50); 
 }
 
 //global variables
-let numberFigure = 80;
+let numberFigure = 20;
 let weightMax = 20;
 let heightMax = 20;
 
 function draw() {
   // background(50,50,50);
   strokeWeight(2);
-  stroke(random(255),random(255),random(255));
-  fill(random(255),random(255),random(255));
-  ellipse(mouseX, mouseY,50,50);
+  //stroke(random(255),random(255),random(255));
+  //fill(random(255),random(255),random(255));
+  fill(0,random(100),random(100));
+  //stroke(0,random(100),random(100));
+  //triangle(mouseX, mouseY,random(20),random(windowHeight));
+  ellipse(mouseX, mouseY, 60+mouseY*0.0005, mouseX*0.5);
   //sphere(40);
-  for (var i = 0; i < 10; i++) {
+  /*for (var i = 0; i < 10; i++) {
     strokeWeight(2);
     stroke(random(255));
     fill(random(255));
-    ellipse(random(windowWidth), random(windowHeight),weightMax,heightMax);
-    //triangle(random(windowWidth), random(windowHeight),windowWidth,-heightMax);
+    //ellipse(random(windowWidth), random(windowHeight),weightMax,heightMax);
+    triangle(random(windowWidth), random(windowHeight),windowWidth,-heightMax);
     //triangle(random(windowWidth), random(windowHeight),-windowWidth,-heightMax);
-  }
+  }*/
 }
 
 // This is for resizing the canvas when using the whole screen
@@ -37,6 +40,6 @@ function windowResized() {
 function mouseClicked() {
   //ellipse(mouseX, mouseY, 50, 50);
   // prevent default
-  background(50,50,50);
+  background(1);
   return false;
 }
